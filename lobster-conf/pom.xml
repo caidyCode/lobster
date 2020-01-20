@@ -13,16 +13,85 @@
     <dependencies>
         <dependency>
             <groupId>com.xc.lobster</groupId>
+            <artifactId>lobster-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xc.lobster</groupId>
+            <artifactId>lobster-biz</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xc.lobster</groupId>
+            <artifactId>lobster-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xc.lobster</groupId>
+            <artifactId>lobster-dal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.xc.lobster</groupId>
             <artifactId>lobster-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
     </dependencies>
-
+    <build>
+        <finalName>lobster-1.0.0</finalName>
+        <filters>
+            <filter>src/main/properties/application-${active}.properties</filter>
+        </filters>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>application.yml</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <layout>ZIP</layout>
+                    <fork>true</fork>
+                    <mainClass>com.xc.lobster.ServiceApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <active>dev</active>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>qa</id>
+            <properties>
+                <active>qa</active>
+            </properties>
+        </profile>
+        <profile>
+            <id>stage</id>
+            <properties>
+                <active>stage</active>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <active>prod</active>
+            </properties>
+        </profile>
+    </profiles>
 </project>

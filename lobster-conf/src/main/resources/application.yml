@@ -1,0 +1,7 @@
+server:
+  #服务端口号
+  port: 8090
+  #服务根路径--根据项目自行修改
+  servlet.context-path: /lobster
+lobster:
+  test: @lobster.test@

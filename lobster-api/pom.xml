@@ -11,5 +11,11 @@
 
     <artifactId>lobster-api</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.xc.lobster</groupId>
+            <artifactId>lobster-biz</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
