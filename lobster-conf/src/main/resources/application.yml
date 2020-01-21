@@ -5,3 +5,15 @@ server:
   servlet.context-path: /lobster
 lobster:
   test: @lobster.test@
+
+spring.datasource:
+  type: com.alibaba.druid.pool.DruidDataSource
+  master:
+    url: @spring.datasource.master.url@
+    username: @spring.datasource.master.username@
+    password: @spring.datasource.master.password@
+  slave:
+    url: @spring.datasource.slave.url@
+    username: @spring.datasource.slave.username@
+    password: @spring.datasource.slave.password@
+
