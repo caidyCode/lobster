@@ -16,4 +16,12 @@ spring.datasource:
     url: @spring.datasource.slave.url@
     username: @spring.datasource.slave.username@
     password: @spring.datasource.slave.password@
+http.client.pool.connection:
+    timeToLive: @http.client.pool.connection.timeToLive@
+    maxTotal: @http.client.pool.connection.maxTotal@
+    maxPerRoute: @http.client.pool.connection.maxPerRoute@
+    connectTimeout: @http.client.pool.connection.connectTimeout@
+    connectionRequestTimeout: @http.client.pool.connection.connectionRequestTimeout@
+    socketTimeout: @http.client.pool.connection.socketTimeout@
+    staleConnectionCheckEnabled: @http.client.pool.connection.staleConnectionCheckEnabled@
 
