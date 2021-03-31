@@ -29,7 +29,7 @@
         <apache.http.client.version>4.5.11</apache.http.client.version>
         <spring.swagger.version>2.9.2</spring.swagger.version>
         <swagger.version>2.0.0-rc2</swagger.version>
-        <guava.version>28.1-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
     </properties>
     <dependencyManagement>
         <dependencies>
